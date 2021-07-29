@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--HEAD PART  -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--STYLESHEET LINK  -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--Body LINK  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!--Logo Font LINK  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <title>Content Manipulation Assignment</title>
+  
+</head>
+<!--END OF HEAD PART  -->
+
+<!--Task description
+You are going to create a mobile first responsive web-page about making green energy affordable for people with average budget. The web-page will have nav-bar, masthead, main-content and footer. Nav-bar has 4 items: home, about, contact and blog. Masthead has to have a background image and a tag-line.
+
+For main-content, you will have 3 buttons and 3 contents (your 3 solutions about making a clean energy affordable for majority of people) stored in an object. On the page load, the first content will be hard-coded HTML. This content will be replaced by another content from JavaScript object once a button is clicked. The first button (because it corresponds to the first content displayed on the page-load) will have a different style than other two (indicating active button). As user clicks any button, id "active-button" will move to the clicked button and corresponding content will be displayed. Size of images and fonts change with the screen-width. Break-point for responsive design will be at: 30rem. Max-width of content is 60rem. This means that content has to be centered in the view-port once 60rem of content-width is exceeded.
+
+Footer needs to have links to at least 3 social media networks (use icon-font).
+-->
+
+<!--BODY PART  -->
+<body>
+    <!--Navigation  -->
+    <div class="navigation" id="nav">
+          <!--Logo  -->
+          <a href="#home" class="active">Green Energy</a>
+
+        <div class="inline">
+          <a href="#home" class="navi">Home</a>
+          <a href="#about" class="navi">About</a>
+          <a href="#contact" class="navi">Contact</a>
+          <a href="#blog" class="navi">Blog</a>
+        </div>
+    </div>
+
+    <!--End of Navigation  -->
+
+
+      <!--Header  -->
+      <header class="w3-container w3-red w3-center">
+
+        <!--Image slider  -->
+          <div>
+            <img class="mySlides" src="/img/green.jpg">
+            <img class="mySlides" src="/img/solar_panels.jpg">
+            <img class="mySlides" src="/img/windmill.jpg">
+          </div>
+
+
+        <!--Tagline  -->
+          <div class="tagline">
+            <h1 class="">Green energy, Clean energy</h1>
+            <p class="">For a better tomorrow</p>
+            <button class="button">Start Today</button>
+          </div>
+    </header>
+    <!--End of Header  -->
+
+    <!--Buttons  -->
+    <section>
+      <nav>
+        <ul>
+          <!--Register all buttons to click event. The event-handler handleSelection will listen for this event to happen.  -->
+          <li id="active" type="button" onclick='document.getElementById("dynamic-content").innerHTML = markup'><i class="fas fa-solar-panel"></i></li>
+          <li type="button" onclick='document.getElementById("dynamic-content").innerHTML = markup1'><i class="fas fa-wind"></i></li>
+          <li type="button" onclick='document.getElementById("dynamic-content").innerHTML = markup2'><i class="fab fa-envira"></i></li>
+        </ul>
+      </nav>
+    </section>
+    <!--End of Buttons  -->
+
+
+    <!--Dynamic content Block  -->
+    <div id="dynamic-content"></div>
+    <!--End of Dynamic content Block  -->
+
+
+<!-- Footer Quote -->
+    <div class="quote">
+        <h1 class="quote_h1">The great hope for a quick and sweeping transition to renewable energy is wishful thinking.</h1>
+        <p>Vaclav Smil</p>
+    </div>
+
+<!-- Footer -->
+
+<!-- Social Media Icons -->
+<footer class="icon_fontowesome">  
+  <div class="social_media">
+    <i class="facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+ </div>
+
+<!-- Copy Right -->
+ <p>All rights reserved</p>
+
+</footer>
+<!-- End of Footer -->
+
+
+
+<!-- Image Slider Script -->
+<script>
+    var myIndex = 0;
+    carousel();
+    
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+    </script>
+
+<!-- End of Image Slider Script -->
+
+        <!--    Font Awesome-->
+        <script src="https://kit.fontawesome.com/ccf0b0f929.js" crossorigin="anonymous"></script>.
+
+<!-- Java Script Link -->
+<script src="js/index.js"></script>
+<!-- End of Java Script Link -->
+
+</body>
+</html>
